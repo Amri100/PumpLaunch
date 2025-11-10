@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#8b5cf6" />
+    
+    <!-- SEO and Social Meta Tags -->
+    <title>PumpLaunch - Next-Generation Memecoin Platform with AI & Advanced Trading</title>
+    <meta name="description" content="The ultimate memecoin platform featuring AI-powered analytics, advanced trading tools, gamification, and real-time features. Create, trade, and discover the next 1000x gems." />
+    <meta name="keywords" content="memecoin, cryptocurrency, trading, AI, blockchain, DeFi, tokens, pump, launch" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="PumpLaunch - Next-Generation Memecoin Platform" />
+    <meta property="og:description" content="AI-powered memecoin platform with advanced trading, gamification, and real-time features." />
+    <meta property="og:type" content="website" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="application-name" content="PumpLaunch" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Performance Hints -->
+    <link rel="preconnect" href="https://esm.sh" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://api.coingecko.com" />
+    
+    <!-- AI Chat Manager -->
+    <script src="chatManager.js"></script>
+    
+    <!-- Babel for React -->
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Custom Enhanced Styles -->
+    <link rel="stylesheet" href="styles.css" />
+    
+    <!-- Import map for modules -->
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@19.1.0",
+          "react-dom/client": "https://esm.sh/react-dom@19.1.0/client",
+          "react-router-dom": "https://esm.sh/react-router-dom@6.29.0?deps=react@19.1.0",
+          "motion/react": "https://esm.sh/motion/react?deps=react@19.1.0,react-dom@19.1.0",
+          "wagmi": "https://esm.sh/wagmi@2.0.0?deps=@tanstack/react-query@5.74.7",
+          "wagmi/actions": "https://esm.sh/wagmi@2.0.0/actions?deps=@tanstack/react-query@5.74.7",
+          "wagmi/chains": "https://esm.sh/wagmi@2.0.0/chains?deps=@tanstack/react-query@5.74.7",
+          "wagmi/connectors": "https://esm.sh/wagmi@2.0.0/connectors?deps=@tanstack/react-query@5.74.7",
+          "viem": "https://esm.sh/viem@2.0.0",
+          "@tanstack/react-query": "https://esm.sh/@tanstack/react-query@5.74.7"
+        }
+      }
+    </script>
+
+    <!-- Core Components -->
+    <script type="text/babel" data-type="module" src="components/ErrorBoundary.jsx"></script>
+    <script type="text/babel" data-type="module" src="components/Web3Provider.jsx"></script>
+    <script type="text/babel" data-type="module" src="components/RealTimeUpdates.jsx"></script>
+    
+    <!-- Enhanced Components -->
+    <script type="text/babel" data-type="module" src="components/TokenCreator.jsx"></script>
+    <script type="text/babel" data-type="module" src="components/TokenExplorer.jsx"></script>
+    <script type="text/babel" data-type="module" src="components/TradingInterface.jsx"></script>
+    <script type="text/babel" data-type="module" src="components/AdvancedTradingInterface.jsx"></script>
+    <script type="text/babel" data-type="module" src="components/Portfolio.jsx"></script>
+    <script type="text/babel" data-type="module" src="components/EnhancedPortfolio.jsx"></script>
+    <script type="text/babel" data-type="module" src="components/SocialFeed.jsx"></script>
+    <script type="text/babel" data-type="module" src="components/CryptoNews.jsx"></script>
+    <script type="text/babel" data-type="module" src="components/Airdrop.jsx"></script>
+    
+    <!-- New Advanced Components -->
+    <script type="text/babel" data-type="module" src="components/AIAnalysis.jsx"></script>
+    <script type="text/babel" data-type="module" src="components/GameCenter.jsx"></script>
+    
+    <!-- Pages -->
+    <script type="text/babel" data-type="module" src="pages/TokenDetailsPage.jsx"></script>
+    <script type="text/babel" data-type="module" src="pages/Home.jsx"></script>
+    
+    <!-- Main App -->
+    <script type="text/babel" data-type="module" src="app.jsx"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(() => console.log('ServiceWorker registered'))
+            .catch(() => console.log('ServiceWorker registration failed'));
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="renderDiv"></div>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(-45deg, #0f0f23, #1a1a2e, #16213e, #0f0f23); z-index: 9999; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+      <div style="font-size: 4rem; margin-bottom: 1rem; animation: spin 2s linear infinite;">🚀</div>
+      <div style="font-size: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">PumpLaunch</div>
+      <div style="color: #9ca3af; margin-top: 1rem;">Loading enhanced experience...</div>
+    </div>
+    
+    <!-- Remove loading screen after React loads -->
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+          const loadingScreen = document.getElementById('loading-screen');
+          if (loadingScreen) {
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => loadingScreen.remove(), 500);
+          }
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>
